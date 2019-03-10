@@ -1,0 +1,111 @@
+﻿<Window x:Class="Calculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculadora"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Calculadora" Height="450" Width="500"
+        MinHeight="450" MinWidth="500"
+        MaxHeight="600" MaxWidth="750"
+        Icon="imagens/calculadora.png">
+    <Grid>
+        <StackPanel Margin="10" VerticalAlignment="Top">
+            <StackPanel>
+                <GroupBox Header="RESULTADO">
+                    <TextBox FontSize="30" Name="txtResultado" Margin="10" IsReadOnly="true" VerticalContentAlignment="Center" FontWeight="Bold" />
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <Button Name="btnUm" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnUm_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number1" Height="30" Width="30" />
+                </Button>
+                <Button Name="btnDois" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnDois_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number2" Height="30" Width="30" />
+                </Button>
+                <Button Name="btnTres" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnTres_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number3" Height="30" Width="30" />
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Name="btnQuatro" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnQuatro_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number4" Height="30" Width="30" />
+                </Button>
+                <Button Name="btnCinco" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnCinco_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number5" Height="30" Width="30" />
+                </Button>
+                <Button Name="btnSeis" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnSeis_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number6" Height="30" Width="30" />
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Button Name="btnSete" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnSete_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number7" Height="30" Width="30" />
+                </Button>
+                <Button Name="btnOito" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnOito_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number8" Height="30" Width="30" />
+                </Button>
+                <Button Name="btnNove" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnNove_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number9" Height="30" Width="30" />
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <Button Name="btnZero" Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="10,5" Click="BtnZero_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Number0" Height="30" Width="30" />
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <Button ToolTip="Apagar" Name="btnApagar" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnApagar_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Backspace" Height="30" Width="30" Foreground="#6200EE"/>
+                </Button>
+                <Button ToolTip="Apagar Tudo" Name="btnApagarTudo" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnApagarTudo_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="EraserVariant" Height="30" Width="30" Foreground="#6200EE"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button ToolTip="Somar" Name="btnAdicao" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnAdicao_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Plus" Height="30" Width="30" Foreground="#6200EE"/>
+                </Button>
+                <Button ToolTip="Subtrair" Name="btnSubtracao" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnSubtracao_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Minus" Height="30" Width="30" Foreground="#6200EE"/>
+
+                    
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button ToolTip="Multiplicar" Name="btnMultiplicacao" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnMultiplicacao_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Clear" Height="30" Width="30" Foreground="#6200EE"/>
+                </Button>
+                <Button ToolTip="Dividir" Name="btnDivisao" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnDivisao_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Division" Height="30" Width="30" Foreground="#6200EE"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button ToolTip="Adicionar casa decimal" Name="btnPontuacao" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnPontuacao_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="DecimalIncrease" Height="30" Width="30" Foreground="#6200EE"/>
+                </Button>
+                <Button ToolTip="Ver Resultado" Name="btnResultado" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10" Click="BtnResultado_Click">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Equal" Height="30" Width="30" Foreground="#6200EE"/>
+
+                    
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+
